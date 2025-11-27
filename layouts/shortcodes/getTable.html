@@ -1,4 +1,0 @@
-{{ $week := string.FindRE `\d+` .Page.Params.title }}
-{{ $file := print "LogTableWeek" . ".md" }}
-{{ (printf "%s%s" .Page.File.Dir $file) | readFile | replaceRE "^---[\\s\\S]+?---" "" | safeHTML }}
-

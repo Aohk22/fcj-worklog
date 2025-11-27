@@ -23,5 +23,4 @@ pre: " <b> 1.1. </b> "
 |- Continue working on personal site.<br/>- Start working on template/workflow for writing report."<br/>|12-09-2025|12-09-2025|https://gohugo.io/documentation/|
 |- Finish configuring Hugo theme.<br/>- Implement a navigation bar.<br/>- Sort report by language (by directory)."<br/>|13-09-2025|13-09-2025|https://gohugo.io/documentation/|
 
-
-
+{{% getTable %}}
