@@ -1,0 +1,36 @@
+table: 
+  headers:  [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - Create a Hugo theme for learning.
+      - 15-09-2025
+      - 19-09-2025
+      - |
+        https://stackoverflow.com/questions/4098195/can-ordered-list-produce-result-that-looks-like-1-1-1-2-1-3-instead-of-just-1
+        https://miro.com/app/board/uXjVJGykszQ=/?share_link_id=988177864442
+        https://discourse.gohugo.io/
+
+    -
+      - |
+        Finish labs:
+        - 000058 Manage Session Logs.
+        - 000019 VPC Peering.
+        - 000020 Transit Gateway.
+      - 16-09-2025
+      - 16-09-2025
+      - https://cloudjourney.awsstudygroup.com/
+
+    - 
+      - |
+        - Finish labs:
+        - 000010 Hybrid DNS resolution using Route 53.
+        - 000005 RDS.
+        - Try out CloudFront with S3 static website.
+      - 17-09-2025
+      - 17-09-2025
+      - |
+        https://cloudjourney.awsstudygroup.com/
+        https://www.youtube.com/live/lZtHCpXal-c?si=79TLFFSo9xfZGCfG
+        https://tutorialsdojo.com/navigating-dns-management-unveiling-amazon-route-53-inbound-and-outbound-resolver-endpoints/
+        https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html
+

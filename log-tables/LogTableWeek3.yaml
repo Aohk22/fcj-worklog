@@ -1,0 +1,51 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - Decide on project topic (malware analysis).
+      - 22-09-2025
+      - 22-09-2025
+      - ""
+
+    -
+      - |
+        Design infrastructure for project.
+        Identify frontend, backend, AWS services to use.
+        Start working on project.
+      - 23-09-2025
+      - 23-09-2025
+      - |
+        https://calculator.aws/#/
+        https://docs.aws.amazon.com/dynamodb/
+        https://fastapi.tiangolo.com/
+
+    -
+      - Research malware sandboxes.
+      - 24-09-2025
+      - 25-09-2025
+      - |
+        https://capev2.readthedocs.io/en/latest/index.html#
+        https://panda-re.mit.edu/
+        https://github.com/cert-ee/cuckoo3
+        https://github.com/CERT-Polska/drakvuf-sandbox
+
+    -
+      - |
+        Finish one part of project:
+        - Basic API server, static file analysis.
+      - 25-09-2025
+      - 25-09-2025
+      - ""
+
+    -
+      - |
+        Learn about Linux virtualization techologies for project.
+        - kvm - qemu - libvirt stack.
+        Create a virtual machine for sandboxing.
+      - 26-09-2025
+      - 27-09-2025
+      - |
+        https://documentation.ubuntu.com/server/how-to/virtualisation/libvirt/
+        https://linux.die.net/man/1/virt-install
+        https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
+        https://schneegans.de/windows/unattend-generator/

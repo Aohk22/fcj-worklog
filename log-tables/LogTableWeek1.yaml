@@ -1,0 +1,71 @@
+table: 
+  headers:  [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - |
+        - Read FCJ internship rules, policies.
+        - Learn about AWS infrastructure.
+        - Create AWS Free Tier account, create admin roles, IAM account.
+        - Complete workshops 000001/7/9.
+      - 07-09-2025 
+      - 07-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Created zero cost budget for account.
+        - Learn about AWS support packs.
+        - Practice creating EC2 instances, routing table, VPCs, Internet Gateway, NAT Gateway, enable automatic IP assignment.
+        - Practice recreating model based on diagram.
+        - Start workshop 000003.
+      - 08-09-2025
+      - 08-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Create Log Group, test pings to EC2 instance.
+        - Try out Reachability Analyzer.
+        - Continue workshop 000003 (NAT Gatways).
+      - 09-09-2025
+      - 09-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Successfully implement Customer Gateway, Virtual Private Gateway, enable Site-to-Site VPN connections.
+        - Enable On-site device to ping EC2 instance on private subnet of VPC.
+        - Enable route propagation for automatic route discovery.
+        - Implement stronger encryption algorithm for VPN (IKEv2) with StrongSwan.
+        - Installed, configured AWS CLI
+      - 10-09-2025
+      - 10-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Search online for project ideas.
+        - Read Hugo documents for writing reports.
+        - Start working on personal site to practice Hugo.
+      - 11-09-2025
+      - 11-09-2025
+      - |
+        https://gohugo.io/documentation/
+        https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Continue working on personal site.
+        - Start working on template/workflow for writing report.
+      - 12-09-2025
+      - 12-09-2025
+      - https://gohugo.io/documentation/
+
+    -
+      - |
+        - Finish configuring Hugo theme.
+        - Implement a navigation bar.
+        - Sort report by language (by directory).
+      - 13-09-2025
+      - 13-09-2025
+      - https://gohugo.io/documentation/
