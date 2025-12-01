@@ -5,55 +5,41 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 4
 
-### Mục tiêu tuần 4:
+- Triển khai lớp cơ sở dữ liệu với DynamoDB
+- Thiết lập tự động hóa hạ tầng và pipeline CI/CD
+- Cấu hình auto-scaling cho dự án
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc tóm tắt
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|Nghiên cứu DynamoDB với mô hình CQRS.|28-09-2025|30-09-2025|https://aws.amazon.com/blogs/database/build-a-cqrs-event-store-with-amazon-dynamodb/<br/>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.Accessing.html<br/>|
+|Tìm hiểu auto scaling cho hạ tầng.|01-10-2025|01-10-2025|https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html|
+|Triển khai Terraform cho việc cung cấp hạ tầng.<br/>Hoàn thành triển khai Terraform tạm thời.<br/>|01-10-2025|02-10-2025|https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation<br/>https://www.geeksforgeeks.org/system-design/microservices-design-patterns/<br/>|
+|Thiết lập CI/CD pipeline:<br/>- Nghiên cứu tích hợp GitHub với CodePipeline.<br/>- Triển khai instance refreshing cho deployments.<br/>|03-10-2025|03-10-2025|https://docs.github.com/en/actions/get-started/quickstart|
 
+### Nhận xét
 
-### Kết quả đạt được tuần 4:
+#### Triển khai DynamoDB
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Nghiên cứu thành công DynamoDB cho dự án sử dụng mô hình CQRS (Command Query Responsibility Segregation). Mô hình này tách biệt các thao tác đọc và ghi, giúp tối ưu hóa hiệu suất và khả năng mở rộng cho hệ thống phân tích malware. Cơ sở dữ liệu hiện xử lý hiệu quả các yêu cầu của người dùng và lưu trữ báo cáo phân tích.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+#### Infrastructure as Code
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+Hoàn thành việc triển khai Terraform cho việc cung cấp hạ tầng. Thiết lập hiện tại bao gồm các thành phần hạ tầng cơ bản. Terraform quản lý việc tạo các tài nguyên AWS bao gồm CodePipeline cho triển khai tự động.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+#### CI/CD Pipeline
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Đang nghiên cứu để thiết lập một pipeline CI/CD hoàn chỉnh tích hợp GitHub với AWS CodePipeline. Pipeline sẽ tự động triển khai các thay đổi sau khi commits được đẩy lên repository. Ngoài ra, đang triển khai instance refreshing để đảm bảo triển khai không có downtime và duy trì tính khả dụng của dịch vụ trong quá trình cập nhật.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+#### Auto Scaling
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+Đã tìm hiểu cấu hình auto-scaling cho hạ tầng dự án để xử lý các tải khác nhau một cách hiệu quả.
 
+#### Các bước tiếp theo
 
+- Hoàn thiện tích hợp GitHub với CodePipeline
+- Tiếp tục làm việc trên các thành phần dự án cá nhân

@@ -5,55 +5,47 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 5
 
-### Mục tiêu tuần 5:
+- Dịch các blog kỹ thuật sử dụng AWS Translate
+- Hoàn thành định nghĩa Terraform cho tích hợp DynamoDB
+- Chuẩn bị mã nguồn ứng dụng cho triển khai và kiểm thử toàn diện
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc và Thành tựu
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|Dịch blog đầu tiên sử dụng AWS Translate.|04-10-2025|05-10-2025|https://docs.aws.amazon.com/translate/|
+|Hoàn thành định nghĩa Terraform cho DynamoDB.<br/>Tạo IAM instance role cho quyền truy cập DynamoDB.<br/>|05-10-2025|06-10-2025|https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table<br/>https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html<br/>|
+|Chuẩn bị mã nguồn ứng dụng cho triển khai:<br/>- Code review và refactoring<br/>- Thiết lập cấu hình môi trường<br/>- Quản lý dependencies<br/>- Triển khai chiến lược kiểm thử toàn diện<br/>- Tạo deployment scripts<br/>- Tích hợp monitoring và logging<br/>|07-10-2025|09-10-2025|https://docs.aws.amazon.com/cloudwatch/<br/>https://docs.pytest.org/<br/>|
+|Dịch thêm hai blog về AWS.|09-10-2025|09-10-2025||
 
+### Nhận xét
 
-### Kết quả đạt được tuần 5:
+#### AWS Translate cho Nội dung Kỹ thuật
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Đã dịch thành công bài blog đầu tiên sử dụng dịch vụ AWS Translate. Điều này chứng minh khả năng của AWS Translate trong việc xử lý tài liệu kỹ thuật và duy trì độ chính xác giữa các ngôn ngữ. Đang lên kế hoạch dịch thêm hai blog nữa để mở rộng khả năng tiếp cận nội dung đa ngôn ngữ cho tài liệu dự án.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+#### Cấu hình Terraform DynamoDB
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+Hoàn thành cấu hình Terraform cho các tài nguyên DynamoDB. Bao gồm định nghĩa bảng, indexes, và quan trọng nhất là thiết lập IAM instance role. Instance role đã được cấu hình với các policies phù hợp để cho phép các EC2 instances truy cập an toàn vào DynamoDB mà không cần nhúng credentials vào mã nguồn ứng dụng. Điều này tuân theo các best practices bảo mật của AWS bằng cách sử dụng instance profiles cho xác thực.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+#### Chuẩn bị Triển khai và Kiểm thử Mã nguồn
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Chuẩn bị codebase ứng dụng cho triển khai production với các quy trình kiểm thử toàn diện. Quá trình này bao gồm nhiều bước quan trọng:
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+- **Code Review và Refactoring**: Rà soát toàn bộ codebase để đảm bảo chất lượng code, loại bỏ các câu lệnh debug, và tối ưu hóa các điểm nghẽn về hiệu suất. Refactor các components để tuân theo best practices và cải thiện khả năng bảo trì code.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+- **Cấu hình Môi trường**: Thiết lập các file cấu hình cho từng môi trường cụ thể: development, staging và production. Đảm bảo rằng thông tin nhạy cảm như API keys và database credentials được quản lý thông qua biến môi trường và AWS Systems Manager Parameter Store.
 
+- **Quản lý Dependencies**: Cập nhật tất cả dependencies của dự án lên phiên bản stable mới nhất và giải quyết các vấn đề tương thích. Tạo file requirements chi tiết để đảm bảo triển khai nhất quán trên các môi trường khác nhau.
 
+- **Scripts Triển khai**: Tạo các deployment scripts tự động xử lý việc đóng gói ứng dụng, cài đặt dependencies, và cấu hình dịch vụ. Các scripts này đảm bảo triển khai nhất quán và có thể lặp lại trong khi giảm thiểu lỗi do con người.
+
+#### Các bước tiếp theo
+
+- Hoàn thành dịch hai bài blog còn lại
+- Thực hiện load testing trên deployment pipeline
+- Thiết lập automated testing trong CI/CD pipeline
+- Tiếp tục phát triển các tính năng phân tích malware

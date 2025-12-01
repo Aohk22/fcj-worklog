@@ -1,11 +1,11 @@
 **To do:**
 
-- [ ] Week 1, 2, 3
+- [x] Week 1, 2, 3
   - [x] Tables
-  - [ ] Content
-- [ ] Week 4, 5, 6
-  - [ ] Tables
-  - [ ] Content
+  - [x] Content
+- [x] Week 4, 5, 6
+  - [x] Tables
+  - [x] Content
 - [ ] Week 7, 8, 9
   - [ ] Tables
   - [ ] Content

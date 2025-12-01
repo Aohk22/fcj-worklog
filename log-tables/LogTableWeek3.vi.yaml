@@ -1,0 +1,51 @@
+table: 
+  headers: [Nhiệm vụ, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - Quyết định chủ đề dự án (phân tích malware).
+      - 22-09-2025
+      - 22-09-2025
+      - ""
+
+    -
+      - |
+        Thiết kế hạ tầng cho dự án.
+        Xác định frontend, backend, dịch vụ AWS cần dùng.
+        Bắt đầu làm dự án.
+      - 23-09-2025
+      - 23-09-2025
+      - |
+        https://calculator.aws/#/
+        https://docs.aws.amazon.com/dynamodb/
+        https://fastapi.tiangolo.com/
+
+    -
+      - Nghiên cứu các sandbox malware, chọn một (CAPEv2).
+      - 24-09-2025
+      - 25-09-2025
+      - |
+        https://capev2.readthedocs.io/en/latest/index.html#
+        https://panda-re.mit.edu/
+        https://github.com/cert-ee/cuckoo3
+        https://github.com/CERT-Polska/drakvuf-sandbox
+
+    -
+      - |
+        Hoàn thành một phần của dự án:
+        - Máy chủ API cơ bản, phân tích tệp tĩnh.
+      - 25-09-2025
+      - 25-09-2025
+      - ""
+
+    -
+      - |
+        Tìm hiểu công nghệ ảo hóa Linux cho dự án.
+        - kvm - qemu - libvirt stack.
+        Tạo một máy ảo để sandbox.
+      - 26-09-2025
+      - 27-09-2025
+      - |
+        https://documentation.ubuntu.com/server/how-to/virtualisation/libvirt/
+        https://linux.die.net/man/1/virt-install
+        https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
+        https://schneegans.de/windows/unattend-generator/

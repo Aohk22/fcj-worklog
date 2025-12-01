@@ -1,0 +1,36 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - Dịch blog đầu tiên sử dụng AWS Translate.
+      - 04-10-2025
+      - 05-10-2025
+      - "https://docs.aws.amazon.com/translate/"
+    -
+      - |
+        Hoàn thành định nghĩa Terraform cho DynamoDB.
+        Tạo IAM instance role cho quyền truy cập DynamoDB.
+      - 05-10-2025
+      - 06-10-2025
+      - |
+        https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table
+        https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html
+    -
+      - |
+        Chuẩn bị mã nguồn ứng dụng cho triển khai:
+        - Code review và refactoring
+        - Thiết lập cấu hình môi trường
+        - Quản lý dependencies
+        - Triển khai chiến lược kiểm thử toàn diện
+        - Tạo deployment scripts
+        - Tích hợp monitoring và logging
+      - 07-10-2025
+      - 09-10-2025
+      - |
+        https://docs.aws.amazon.com/cloudwatch/
+        https://docs.pytest.org/
+    -
+      - Dịch thêm hai blog về AWS.
+      - 09-10-2025
+      - 09-10-2025
+      - ""

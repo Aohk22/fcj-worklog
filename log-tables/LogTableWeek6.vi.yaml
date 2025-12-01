@@ -1,0 +1,54 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - |
+        Tái cấu trúc kiến trúc codebase.
+        Chia nhỏ script nguyên khối thành các modules logic.
+      - 10-10-2025
+      - 11-10-2025
+      - ""
+    -
+      - |
+        Refactor các hàm phân tích core:
+        - Triển khai lazy loading cho malware hash database
+        - Nâng cao phát hiện loại file với TrID
+        - Triển khai tiện ích trích xuất chuỗi
+      - 11-10-2025
+      - 12-10-2025
+      - |
+        https://mark0.net/soft-trid-e.html
+        https://docs.python.org/3/library/subprocess.html
+    -
+      - |
+        Phát triển các hàm helper phân tích PE:
+        - Phân tích section với tính toán entropy
+        - Phát hiện kiến trúc
+        - Xác thực timestamp
+      - 12-10-2025
+      - 13-10-2025
+      - |
+        https://github.com/erocarrera/pefile
+        https://en.wikipedia.org/wiki/Portable_Executable
+    -
+      - |
+        Triển khai các hàm helper phân tích ELF:
+        - Phân tích header
+        - Phân tích symbol table
+        - Trích xuất thông tin segment
+      - 13-10-2025
+      - 14-10-2025
+      - |
+        https://man7.org/linux/man-pages/man1/readelf.1.html
+        https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+    -
+      - |
+        Tích hợp Ghidra decompilation:
+        - Cấu hình headless analyzer
+        - Triển khai xử lý file an toàn
+        - Thêm xử lý lỗi và validation
+      - 14-10-2025
+      - 16-10-2025
+      - |
+        https://ghidra-sre.org/
+        https://github.com/NationalSecurityAgency/ghidra

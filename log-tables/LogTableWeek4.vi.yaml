@@ -1,0 +1,32 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - Nghiên cứu DynamoDB với mô hình CQRS.
+      - 28-09-2025
+      - 30-09-2025
+      - |
+        https://aws.amazon.com/blogs/database/build-a-cqrs-event-store-with-amazon-dynamodb/
+        https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.Accessing.html
+    -
+      - Tìm hiểu auto scaling cho hạ tầng.
+      - 01-10-2025
+      - 01-10-2025
+      - "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+    -
+      - |
+        Triển khai Terraform cho việc cung cấp hạ tầng.
+        Hoàn thành triển khai Terraform tạm thời.
+      - 01-10-2025
+      - 02-10-2025
+      - |
+        https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation
+        https://www.geeksforgeeks.org/system-design/microservices-design-patterns/
+    -
+      - |
+        Thiết lập CI/CD pipeline:
+        - Nghiên cứu tích hợp GitHub với CodePipeline.
+        - Triển khai instance refreshing cho deployments.
+      - 03-10-2025
+      - 03-10-2025
+      - "https://docs.github.com/en/actions/get-started/quickstart"

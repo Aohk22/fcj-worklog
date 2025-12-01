@@ -5,55 +5,21 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm nhóm/thành viên cho dự án 12 tuần.  
+* Hiểu các dịch vụ cơ bản của AWS, cách sử dụng console & CLI, cách sử dụng Hugo templating engine.  
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
-
-### Kết quả đạt được tuần 1:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+|Nhiệm vụ|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|- Đọc quy định, chính sách thực tập FCJ.<br/>- Tìm hiểu về hạ tầng AWS.<br/>- Tạo tài khoản AWS Free Tier, tạo vai trò admin, tài khoản IAM.<br/>- Hoàn thành workshop 000001/7/9.<br/>|07-09-2025|07-09-2025|https://cloudjourney.awsstudygroup.com/vi/|
+|- Tạo ngân sách chi phí 0 đồng cho tài khoản.<br/>- Tìm hiểu về các gói hỗ trợ AWS.<br/>- Thực hành tạo EC2 instances, bảng định tuyến, VPCs, Internet Gateway, NAT Gateway, bật gán IP tự động.<br/>- Thực hành dựng lại mô hình dựa trên sơ đồ.<br/>- Bắt đầu workshop 000003.<br/>|08-09-2025|08-09-2025|https://cloudjourney.awsstudygroup.com/vi/|
+|- Tạo Log Group, kiểm tra ping đến EC2 instance.<br/>- Thử Reachability Analyzer.<br/>- Tiếp tục workshop 000003 (NAT Gateways).<br/>|09-09-2025|09-09-2025|https://cloudjourney.awsstudygroup.com/vi/|
+|- Triển khai thành công Customer Gateway, Virtual Private Gateway, bật kết nối Site-to-Site VPN.<br/>- Cho phép thiết bị On-site ping EC2 instance trong private subnet của VPC.<br/>- Bật route propagation để tự động phát hiện route.<br/>- Triển khai thuật toán mã hóa mạnh hơn cho VPN (IKEv2) với StrongSwan.<br/>- Cài đặt, cấu hình AWS CLI.<br/>|10-09-2025|10-09-2025|https://cloudjourney.awsstudygroup.com/vi/|
+|- Tìm ý tưởng dự án trên mạng.<br/>- Đọc tài liệu Hugo để viết báo cáo.<br/>- Bắt đầu làm trang cá nhân để thực hành Hugo.<br/>|11-09-2025|11-09-2025|https://gohugo.io/documentation/<br/>https://cloudjourney.awsstudygroup.com/vi/<br/>|
+|- Tiếp tục làm trang cá nhân.<br/>- Bắt đầu làm template/quy trình để viết báo cáo.<br/>|12-09-2025|12-09-2025|https://gohugo.io/documentation/|
+|- Hoàn tất cấu hình theme Hugo.<br/>- Triển khai thanh điều hướng.<br/>- Sắp xếp báo cáo theo ngôn ngữ (theo thư mục).<br/>|13-09-2025|13-09-2025|https://gohugo.io/documentation/|
 

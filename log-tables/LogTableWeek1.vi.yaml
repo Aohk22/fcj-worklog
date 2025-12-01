@@ -1,0 +1,71 @@
+table: 
+  headers: [Nhiệm vụ, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - |
+        - Đọc quy định, chính sách thực tập FCJ.
+        - Tìm hiểu về hạ tầng AWS.
+        - Tạo tài khoản AWS Free Tier, tạo vai trò admin, tài khoản IAM.
+        - Hoàn thành workshop 000001/7/9.
+      - 07-09-2025
+      - 07-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Tạo ngân sách chi phí 0 đồng cho tài khoản.
+        - Tìm hiểu về các gói hỗ trợ AWS.
+        - Thực hành tạo EC2 instances, bảng định tuyến, VPCs, Internet Gateway, NAT Gateway, bật gán IP tự động.
+        - Thực hành dựng lại mô hình dựa trên sơ đồ.
+        - Bắt đầu workshop 000003.
+      - 08-09-2025
+      - 08-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Tạo Log Group, kiểm tra ping đến EC2 instance.
+        - Thử Reachability Analyzer.
+        - Tiếp tục workshop 000003 (NAT Gateways).
+      - 09-09-2025
+      - 09-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Triển khai thành công Customer Gateway, Virtual Private Gateway, bật kết nối Site-to-Site VPN.
+        - Cho phép thiết bị On-site ping EC2 instance trong private subnet của VPC.
+        - Bật route propagation để tự động phát hiện route.
+        - Triển khai thuật toán mã hóa mạnh hơn cho VPN (IKEv2) với StrongSwan.
+        - Cài đặt, cấu hình AWS CLI.
+      - 10-09-2025
+      - 10-09-2025
+      - https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Tìm ý tưởng dự án trên mạng.
+        - Đọc tài liệu Hugo để viết báo cáo.
+        - Bắt đầu làm trang cá nhân để thực hành Hugo.
+      - 11-09-2025
+      - 11-09-2025
+      - |
+        https://gohugo.io/documentation/
+        https://cloudjourney.awsstudygroup.com/vi/
+
+    -
+      - |
+        - Tiếp tục làm trang cá nhân.
+        - Bắt đầu làm template/quy trình để viết báo cáo.
+      - 12-09-2025
+      - 12-09-2025
+      - https://gohugo.io/documentation/
+
+    -
+      - |
+        - Hoàn tất cấu hình theme Hugo.
+        - Triển khai thanh điều hướng.
+        - Sắp xếp báo cáo theo ngôn ngữ (theo thư mục).
+      - 13-09-2025
+      - 13-09-2025
+      - https://gohugo.io/documentation/

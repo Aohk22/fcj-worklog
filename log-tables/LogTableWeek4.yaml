@@ -1,0 +1,32 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - Research DynamoDB with CQRS Pattern.
+      - 28-09-2025
+      - 30-09-2025
+      - |
+        https://aws.amazon.com/blogs/database/build-a-cqrs-event-store-with-amazon-dynamodb/
+        https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.Accessing.html
+    -
+      - Figure out auto scaling for infrastructure.
+      - 01-10-2025
+      - 01-10-2025
+      - "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+    -
+      - |
+        Implement Terraform for infrastructure provisioning.
+        Finish temporary terraform implementation.
+      - 01-10-2025
+      - 02-10-2025
+      - |
+        https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation
+        https://www.geeksforgeeks.org/system-design/microservices-design-patterns/
+    -
+      - |
+        Set up CI/CD pipeline:
+        - Research GitHub integration with CodePipeline.
+        - Implement instance refreshing for deployments.
+      - 03-10-2025
+      - 03-10-2025
+      - "https://docs.github.com/en/actions/get-started/quickstart"

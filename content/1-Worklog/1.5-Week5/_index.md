@@ -5,53 +5,47 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 5 Objectives
 
-### Week 5 Objectives:
+- Translate technical blogs using AWS Translate
+- Complete Terraform definitions for DynamoDB integration
+- Prepare application code for deployment and comprehensive testing
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks and Achievements
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Task|Start Date|Completion Date|Reference Material|
+| --- | --- | --- | --- |
+|Translate first blog using AWS Translate.|04-10-2025|05-10-2025|https://docs.aws.amazon.com/translate/|
+|Complete Terraform definition for DynamoDB.<br/>Create IAM instance role for DynamoDB access.<br/>|05-10-2025|06-10-2025|https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table<br/>https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html<br/>|
+|Prepare application code for deployment:<br/>- Code review and refactoring<br/>- Environment configuration setup<br/>- Dependency management<br/>- Implement comprehensive testing strategy<br/>- Create deployment scripts<br/>- Integrate monitoring and logging<br/>|07-10-2025|09-10-2025|https://docs.aws.amazon.com/cloudwatch/<br/>https://docs.pytest.org/<br/>|
+|Translate two additional blogs on AWS.|09-10-2025|09-10-2025||
 
+### Comments
 
-### Week 5 Achievements:
+#### AWS Translate for Technical Content
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Successfully translated the first blog post using AWS Translate service. This demonstrates the capability of AWS Translate to handle technical documentation and maintain accuracy across languages. Planning to translate two additional blogs to expand the multilingual content availability for the project documentation.
 
-* Successfully created and configured an AWS Free Tier account.
+#### Terraform DynamoDB Configuration
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+Completed the Terraform configuration for DynamoDB resources. This includes table definitions, indexes, and most importantly, the IAM instance role setup. The instance role has been configured with appropriate policies to allow EC2 instances to securely access DynamoDB without embedding credentials in the application code. This follows AWS security best practices by using instance profiles for authentication.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+#### Code Deployment Preparation and Testing
 
-* Used AWS CLI to perform basic operations such as:
+Prepared the application codebase for production deployment with comprehensive testing procedures. This involved several critical steps:
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+- **Code Review and Refactoring**: Reviewed the entire codebase to ensure code quality, removed debugging statements, and optimized performance bottlenecks. Refactored components to follow best practices and improved code maintainability.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **Environment Configuration**: Set up environment-specific configuration files for development, staging, and production environments. Ensured that sensitive information such as API keys and database credentials are managed through environment variables and AWS Systems Manager Parameter Store.
+
+- **Dependency Management**: Updated all project dependencies to their latest stable versions and resolved any compatibility issues. Created a comprehensive requirements file to ensure consistent deployments across different environments.
+
+- **Deployment Scripts**: Created automated deployment scripts that handle application packaging, dependency installation, and service configuration. These scripts ensure consistent and repeatable deployments while minimizing human error.
+
+#### Next Steps
+
+- Complete translation of remaining two blog posts
+- Perform load testing on the deployment pipeline
+- Set up automated testing in CI/CD pipeline
+- Continue development of malware analysis features

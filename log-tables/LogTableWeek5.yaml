@@ -1,0 +1,39 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - Translate first blog using AWS Translate.
+      - 04-10-2025
+      - 05-10-2025
+      - "https://docs.aws.amazon.com/translate/"
+
+    -
+      - |
+        Complete Terraform definition for DynamoDB.
+        Create IAM instance role for DynamoDB access.
+      - 05-10-2025
+      - 06-10-2025
+      - |
+        https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table
+        https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html
+
+    -
+      - |
+        Prepare application code for deployment:
+        - Code review and refactoring
+        - Environment configuration setup
+        - Dependency management
+        - Implement comprehensive testing strategy
+        - Create deployment scripts
+        - Integrate monitoring and logging
+      - 07-10-2025
+      - 09-10-2025
+      - |
+        https://docs.aws.amazon.com/cloudwatch/
+        https://docs.pytest.org/
+
+    -
+      - Translate two additional blogs on AWS.
+      - 09-10-2025
+      - 09-10-2025
+      - ""

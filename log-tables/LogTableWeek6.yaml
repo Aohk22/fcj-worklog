@@ -1,0 +1,54 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - |
+        Restructure codebase architecture.
+        Break down monolithic script into logical modules.
+      - 10-10-2025
+      - 11-10-2025
+      - ""
+    -
+      - |
+        Refactor core analysis functions:
+        - Implement lazy loading for malware hash database
+        - Enhance file type detection with TrID
+        - Implement string extraction utility
+      - 11-10-2025
+      - 12-10-2025
+      - |
+        https://mark0.net/soft-trid-e.html
+        https://docs.python.org/3/library/subprocess.html
+    -
+      - |
+        Develop PE analysis helper functions:
+        - Section analysis with entropy calculation
+        - Architecture detection
+        - Timestamp validation
+      - 12-10-2025
+      - 13-10-2025
+      - |
+        https://github.com/erocarrera/pefile
+        https://en.wikipedia.org/wiki/Portable_Executable
+    -
+      - |
+        Implement ELF analysis helper functions:
+        - Header parsing
+        - Symbol table analysis
+        - Segment information extraction
+      - 13-10-2025
+      - 14-10-2025
+      - |
+        https://man7.org/linux/man-pages/man1/readelf.1.html
+        https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+    -
+      - |
+        Integrate Ghidra decompilation:
+        - Configure headless analyzer
+        - Implement secure file handling
+        - Add error handling and validation
+      - 14-10-2025
+      - 16-10-2025
+      - |
+        https://ghidra-sre.org/
+        https://github.com/NationalSecurityAgency/ghidra
