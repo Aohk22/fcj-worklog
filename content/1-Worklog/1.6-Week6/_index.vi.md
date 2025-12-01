@@ -16,7 +16,7 @@ pre: " <b> 1.6. </b> "
 
 |Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
 | --- | --- | --- | --- |
-|Tái cấu trúc kiến trúc codebase.<br/>Chia nhỏ script nguyên khối thành các modules logic.<br/>|10-10-2025|11-10-2025||
+|Tái cấu trúc kiến trúc codebase.<br/>Chia nhỏ script nguyên khối thành các modules logic.<br/>|10-10-2025|11-10-2025|https://github.com/Aohk22/fcj-1-file-analyzer/blob/main/srvc_file/utils/core/file_processor.py|
 |Refactor các hàm phân tích core:<br/>- Triển khai lazy loading cho malware hash database<br/>- Nâng cao phát hiện loại file với TrID<br/>- Triển khai tiện ích trích xuất chuỗi<br/>|11-10-2025|12-10-2025|https://mark0.net/soft-trid-e.html<br/>https://docs.python.org/3/library/subprocess.html<br/>|
 |Phát triển các hàm helper phân tích PE:<br/>- Phân tích section với tính toán entropy<br/>- Phát hiện kiến trúc<br/>- Xác thực timestamp<br/>|12-10-2025|13-10-2025|https://github.com/erocarrera/pefile<br/>https://en.wikipedia.org/wiki/Portable_Executable<br/>|
 |Triển khai các hàm helper phân tích ELF:<br/>- Phân tích header<br/>- Phân tích symbol table<br/>- Trích xuất thông tin segment<br/>|13-10-2025|14-10-2025|https://man7.org/linux/man-pages/man1/readelf.1.html<br/>https://en.wikipedia.org/wiki/Executable_and_Linkable_Format<br/>|
@@ -82,7 +82,5 @@ Trong suốt tuần, tập trung vào cải thiện chất lượng code tổng 
 #### Các bước tiếp theo
 
 - Triển khai unit tests cho tất cả các helper functions
-- Thêm hỗ trợ cho các định dạng file bổ sung (Mach-O, scripts)
-- Tối ưu hóa hiệu suất cho phân tích file lớn
 - Tích hợp các helper functions vào các API endpoints chính
 - Tiếp tục phát triển khả năng phân tích động

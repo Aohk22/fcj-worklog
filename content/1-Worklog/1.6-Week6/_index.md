@@ -16,7 +16,7 @@ pre: " <b> 1.6. </b> "
 
 |Task|Start Date|Completion Date|Reference Material|
 | --- | --- | --- | --- |
-|Restructure codebase architecture.<br/>Break down monolithic script into logical modules.<br/>|10-10-2025|11-10-2025||
+|Restructure codebase architecture.<br/>Break down monolithic script into logical modules.<br/>|10-10-2025|11-10-2025|https://github.com/Aohk22/fcj-1-file-analyzer/blob/main/srvc_file/utils/core/file_processor.py|
 |Refactor core analysis functions:<br/>- Implement lazy loading for malware hash database<br/>- Enhance file type detection with TrID<br/>- Implement string extraction utility<br/>|11-10-2025|12-10-2025|https://mark0.net/soft-trid-e.html<br/>https://docs.python.org/3/library/subprocess.html<br/>|
 |Develop PE analysis helper functions:<br/>- Section analysis with entropy calculation<br/>- Architecture detection<br/>- Timestamp validation<br/>|12-10-2025|13-10-2025|https://github.com/erocarrera/pefile<br/>https://en.wikipedia.org/wiki/Portable_Executable<br/>|
 |Implement ELF analysis helper functions:<br/>- Header parsing<br/>- Symbol table analysis<br/>- Segment information extraction<br/>|13-10-2025|14-10-2025|https://man7.org/linux/man-pages/man1/readelf.1.html<br/>https://en.wikipedia.org/wiki/Executable_and_Linkable_Format<br/>|
@@ -82,7 +82,5 @@ Throughout the week, focused on improving overall code quality:
 #### Next Steps
 
 - Implement unit tests for all helper functions
-- Add support for additional file formats (Mach-O, scripts)
-- Optimize performance for large file analysis
 - Integrate helper functions into the main API endpoints
 - Continue development of dynamic analysis capabilities
