@@ -1,0 +1,33 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - |
+        Migrate frontend sang Bun runtime:
+        - Tái cấu trúc project dependencies
+        - Cập nhật build scripts và configuration
+        - Test tương thích với APIs hiện có
+      - 31-10-2025
+      - 01-11-2025
+      - |
+        https://bun.sh/
+        https://bun.sh/docs
+    -
+      - |
+        Triển khai cải thiện UI:
+        - Thêm scrolling cho phần decompiled code
+        - Thêm scrolling cho phần extracted strings
+        - Cải thiện layout và khả năng đọc báo cáo
+      - 02-11-2025
+      - 03-11-2025
+      - ""
+    -
+      - |
+        Phát triển tiện ích phân tích báo cáo tự động:
+        - Tạo hàm objectWalk() cho recursive traversal
+        - Triển khai headerize() cho chuyển đổi camelCase sang Title Case
+        - Tổ chức utilities trong module util.js
+      - 03-11-2025
+      - 05-11-2025
+      - "https://github.com/Aohk22/fcj-1-file-analyzer/blob/main/srvc_web/app/util.js"
+   

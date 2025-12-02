@@ -1,0 +1,32 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - |
+        Nghiên cứu best practices của Terraform.
+        Lập kế hoạch cấu trúc thư mục mới cho modules và environments.
+      - 17-10-2025
+      - 17-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/language/modules
+        https://developer.hashicorp.com/terraform/tutorials/modules/module
+    -
+      - |
+        Tái cấu trúc codebase Terraform:
+        - Tạo cấu trúc module với main.tf, variables.tf, outputs.tf
+        - Trích xuất VPC, Subnet, Launch Template, Instance Profile modules
+        - Trích xuất Service Auto Scale và Image Builder modules
+      - 18-10-2025
+      - 20-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/language/modules/develop
+        https://www.terraform-best-practices.com/
+    -
+      - |
+        Triển khai cấu hình specific cho môi trường:
+        - Tạo thư mục môi trường dev
+        - Triển khai modules trong context môi trường
+        - Tạo file .tfvars để quản lý biến
+      - 20-10-2025
+      - 21-10-2025
+      - ""

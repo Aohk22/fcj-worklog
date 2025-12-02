@@ -1,0 +1,43 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - |
+        Learn and integrate AWS Image Builder:
+        - Configure IAM roles and instance profiles
+        - Create build component scripts
+        - Define image recipes and infrastructure
+        - Create automated pipelines for AMI generation
+      - 21-10-2025
+      - 23-10-2025
+      - |
+        https://docs.aws.amazon.com/imagebuilder/
+        https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html
+    -
+      - |
+        Debug and test new Terraform structure:
+        - Resolve module dependencies
+        - Fix IAM permissions
+        - Test Image Builder pipeline
+      - 23-10-2025
+      - 23-10-2025
+      - ""
+
+    -
+      - |
+        Research Terraform dependency management.
+        Analyze deployment failures and identify root cause.
+      - 24-10-2025
+      - 24-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/cli/commands/apply
+        https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on
+    -
+      - |
+        Implement targeted resource initialization:
+        - Use -target option for Image Builder pre-initialization
+        - Create phased deployment strategy
+        - Test deployment order and dependency satisfaction
+      - 25-10-2025
+      - 26-10-2025
+      - "https://developer.hashicorp.com/terraform/cli/commands/plan#resource-targeting"

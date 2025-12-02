@@ -13,19 +13,19 @@ Worklogs are carried out over about 3 months (throughout the internship period) 
 
 **Week 2:** [Creating theme in Hugo, keep learning about AWS (DNS, CloudFront, RDS,...).](1.2-Week2/)
 
-**Week 3:** [Start project, figuring which AWS services to use, research malware sandboxes.](1.3-Week3/)
+**Week 3:** [Start project, choose AWS services, research malware sandboxe.](1.3-Week3/)
 
-**Week 4:** [Doing task C...](1.4-Week4/)
+**Week 4:** [DynamoDB and CI/CD pipelines, AWS autoscaling.](1.4-Week4/)
 
-**Week 5:** [Doing task D...](1.5-Week5/)
+**Week 5:** [Translate AWS blogs, Terraform definition for DynamoDB.](1.5-Week5/)
 
-**Week 6:** [Doing task E...](1.6-Week6/)
+**Week 6:** [Refactoring codebase, implementing new features.](1.6-Week6/)
 
-**Week 7:** [Doing task G...](1.7-Week7/)
+**Week 7:** [Refactoring Terraform codebase, learn AWS image builder and implement.](1.7-Week7/)
 
-**Week 8:** [Doing task H...](1.8-Week8/)
+**Week 8:** [Fix IAM permissions during test deploy, testing new workflow.](1.8-Week8/)
 
-**Week 9:** [Doing task I...](1.9-Week9/)
+**Week 9:** [Write frontend, webserver, JSON parser.](1.9-Week9/)
 
 **Week 10:** [Doing task L...](1.10-Week10/)
 

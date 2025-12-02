@@ -1,0 +1,44 @@
+table: 
+  headers: [Công việc, Ngày bắt đầu, Ngày hoàn thành, Tài liệu tham khảo]
+  rows:
+    -
+      - |
+        Học và tích hợp AWS Image Builder:
+        - Cấu hình IAM roles và instance profiles
+        - Tạo build component scripts
+        - Định nghĩa image recipes và infrastructure
+        - Tạo pipelines tự động cho việc tạo AMI
+      - 21-10-2025
+      - 23-10-2025
+      - |
+        https://docs.aws.amazon.com/imagebuilder/
+        https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html
+    -
+      - |
+        Debug và test cấu trúc Terraform mới:
+        - Giải quyết module dependencies
+        - Sửa IAM permissions
+        - Test Image Builder pipeline
+      - 23-10-2025
+      - 23-10-2025
+      - ""
+
+    -
+      - |
+        Nghiên cứu quản lý dependency của Terraform.
+        Phân tích deployment failures và xác định nguyên nhân gốc rễ.
+      - 24-10-2025
+      - 24-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/cli/commands/apply
+        https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on
+    -
+      - |
+        Triển khai khởi tạo resource có mục tiêu:
+        - Sử dụng tùy chọn -target cho pre-initialization Image Builder
+        - Tạo chiến lược deployment theo giai đoạn
+        - Test thứ tự deployment và thỏa mãn dependency
+      - 25-10-2025
+      - 26-10-2025
+      - "https://developer.hashicorp.com/terraform/cli/commands/plan#resource-targeting"
+

@@ -5,55 +5,52 @@ weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 9
 
-### Mục tiêu tuần 9:
+- Viết lại ứng dụng frontend sử dụng Bun runtime
+- Cải thiện giao diện người dùng cho báo cáo phân tích malware
+- Triển khai tiện ích phân tích báo cáo tự động
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc và Thành tựu
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|Migrate frontend sang Bun runtime:<br/>- Tái cấu trúc project dependencies<br/>- Cập nhật build scripts và configuration<br/>- Test tương thích với APIs hiện có<br/>|31-10-2025|01-11-2025|https://bun.sh/<br/>https://bun.sh/docs<br/>|
+|Triển khai cải thiện UI:<br/>- Thêm scrolling cho phần decompiled code<br/>- Thêm scrolling cho phần extracted strings<br/>- Cải thiện layout và khả năng đọc báo cáo<br/>|02-11-2025|03-11-2025||
+|Phát triển tiện ích phân tích báo cáo tự động:<br/>- Tạo hàm objectWalk() cho recursive traversal<br/>- Triển khai headerize() cho chuyển đổi camelCase sang Title Case<br/>- Tổ chức utilities trong module util.js<br/>|03-11-2025|05-11-2025|https://github.com/Aohk22/fcj-1-file-analyzer/blob/main/srvc_web/app/util.js|
 
+### Nhận xét
 
-### Kết quả đạt được tuần 9:
+#### Migration Frontend sang Bun
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Hoàn thành việc viết lại hoàn toàn ứng dụng frontend sử dụng Bun, một JavaScript runtime hiện đại cung cấp cải thiện hiệu suất đáng kể so với Node.js truyền thống. Bun cung cấp:
+- Thời gian khởi động nhanh hơn và memory footprint giảm
+- Bundler, transpiler, và package manager tích hợp sẵn
+- Hỗ trợ TypeScript native không cần cấu hình bổ sung
+- Cải thiện developer experience với hot reload nhanh hơn
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+Migration bao gồm tái cấu trúc dependencies của dự án, cập nhật build scripts, và đảm bảo tương thích với các API integrations hiện có. Frontend mới dựa trên Bun cho thấy thời gian load nhanh hơn đáng kể và responsiveness được cải thiện.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+#### Cải thiện Giao diện Người dùng
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+Triển khai các cải thiện UI quan trọng để nâng cao trải nghiệm người dùng khi xem báo cáo phân tích malware:
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+**Scrolling cho Decompiled Code**:
+Thêm scrollable containers cho phần decompiled code. Vì Ghidra decompilation có thể tạo ra hàng nghìn dòng pseudocode, việc hiển thị tất cả cùng lúc là không thực tế và gây ra vấn đề hiệu suất trình duyệt. Scrollable view mới:
+- Giới hạn viewport ban đầu ở chiều cao có thể quản lý được
+- Duy trì định dạng code và syntax
+- Cung cấp scrolling mượt mà cho codebase lớn
+- Cải thiện hiệu suất load trang bằng cách virtualizing content rendering
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+**Scrolling cho Extracted Strings**:
+Tương tự triển khai scrollable containers cho phần strings. Binary files thường chứa hàng nghìn strings được trích xuất, khiến chúng khó điều hướng. Scrollable strings view:
+- Tổ chức strings theo định dạng sạch sẽ, dễ đọc
+- Cho phép users nhanh chóng scan qua các string collections lớn
+- Duy trì chức năng search trong scrollable area
+- Cải thiện khả năng đọc báo cáo tổng thể
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+#### Giải pháp Phân tích Báo cáo Tự động
 
+Giải quyết một pain point phát triển đáng kể: việc phân tích thủ công các report objects lớn, lồng nhau từ analysis API đang trở nên ngày càng tẻ nhạt và dễ lỗi. Khi khả năng phân tích mở rộng, cấu trúc báo cáo trở nên phức tạp hơn với các objects lồng sâu chứa PE sections, ELF headers, symbol tables, và các metadata khác nhau.
 

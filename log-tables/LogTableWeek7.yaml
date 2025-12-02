@@ -1,0 +1,32 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - |
+        Research Terraform best practices.
+        Plan new folder structure for modules and environments.
+      - 17-10-2025
+      - 17-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/language/modules
+        https://developer.hashicorp.com/terraform/tutorials/modules/module
+    -
+      - |
+        Restructure Terraform codebase:
+        - Create module structure with main.tf, variables.tf, outputs.tf
+        - Extract VPC, Subnet, Launch Template, Instance Profile modules
+        - Extract Service Auto Scale and Image Builder modules
+      - 18-10-2025
+      - 20-10-2025
+      - |
+        https://developer.hashicorp.com/terraform/language/modules/develop
+        https://www.terraform-best-practices.com/
+    -
+      - |
+        Implement environment-specific configurations:
+        - Create dev environment directory
+        - Implement modules in environment context
+        - Create .tfvars files for variable management
+      - 20-10-2025
+      - 21-10-2025
+      - ""

@@ -5,55 +5,63 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 7
 
-### Mục tiêu tuần 7:
+- Tái cấu trúc codebase Terraform để dễ bảo trì hơn
+- Triển khai kiến trúc modular theo best practices của Terraform
+- Học và tích hợp AWS Image Builder cho việc tạo AMI tự động
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc và Thành tựu
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|Nghiên cứu best practices của Terraform.<br/>Lập kế hoạch cấu trúc thư mục mới cho modules và environments.<br/>|17-10-2025|17-10-2025|https://developer.hashicorp.com/terraform/language/modules<br/>https://developer.hashicorp.com/terraform/tutorials/modules/module<br/>|
+|Tái cấu trúc codebase Terraform:<br/>- Tạo cấu trúc module với main.tf, variables.tf, outputs.tf<br/>- Trích xuất VPC, Subnet, Launch Template, Instance Profile modules<br/>- Trích xuất Service Auto Scale và Image Builder modules<br/>|18-10-2025|20-10-2025|https://developer.hashicorp.com/terraform/language/modules/develop<br/>https://www.terraform-best-practices.com/<br/>|
+|Triển khai cấu hình specific cho môi trường:<br/>- Tạo thư mục môi trường dev<br/>- Triển khai modules trong context môi trường<br/>- Tạo file .tfvars để quản lý biến<br/>|20-10-2025|21-10-2025||
 
+### Nhận xét
 
-### Kết quả đạt được tuần 7:
+#### Tái cấu trúc Code Terraform
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Khi dự án phát triển về độ phức tạp, cấu trúc Terraform ban đầu với tất cả resources được định nghĩa trong các file phẳng trở nên ngày càng khó bảo trì. Cấu trúc cũ bao gồm nhiều file `.tf` trong một thư mục duy nhất, khiến việc hiểu dependencies, tái sử dụng code, và quản lý các môi trường khác nhau trở nên khó khăn.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+#### Triển khai Chuẩn Module Terraform
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+Tái cấu trúc toàn bộ codebase Terraform theo best practices của ngành và cấu trúc module chuẩn. Mỗi component có thể tái sử dụng được trích xuất thành module riêng với mẫu ba file chuẩn:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+- `main.tf` - Chứa các định nghĩa resource chính
+- `variables.tf` - Định nghĩa các biến đầu vào với mô tả và kiểu dữ liệu
+- `outputs.tf` - Xuất các giá trị để sử dụng bởi các modules khác
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+Cách tiếp cận modular này cải thiện đáng kể khả năng tái sử dụng code, khả năng testing, và tính bảo trì tổng thể. Các modules giờ có thể được version độc lập và tái sử dụng trên các môi trường khác nhau.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+#### Thiết kế Cấu trúc Thư mục Mới
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+Thiết kế và triển khai cấu trúc thư mục phân cấp tách biệt các concerns:
 
+**Thư mục Modules**: Chứa sáu infrastructure modules có thể tái sử dụng:
+- **VPC Module** - Cấu hình Virtual Private Cloud với CIDR blocks và networking settings
+- **Subnet Module** - Tạo subnet với phân phối availability zone
+- **Launch Template Module** - Cấu hình EC2 launch với user data và instance settings
+- **Instance Profile Module** - IAM roles và instance profiles cho quyền EC2
+- **Service Auto Scale Module** - Auto Scaling Groups và Target Groups cho elasticity
+- **Image Builder Module** - Cấu hình AWS Image Builder pipeline cho việc tạo AMI tự động
 
+**Thư mục Environments**: Chứa các cấu hình specific cho từng môi trường (dev, staging, production). Mỗi môi trường triển khai các modules được định nghĩa ở trên với các biến specific cho môi trường thông qua các file `.tfvars`. Môi trường dev bao gồm:
+- Cấu hình provider cho AWS
+- Thiết lập networking (VPC, subnets, routes)
+- Cấu hình load balancer và DNS
+- Định nghĩa bảng DynamoDB
+- Quy tắc security group
+- Launch template với user data
+- Cấu hình Image Builder pipeline
+
+Sự tách biệt này cho phép quản lý dễ dàng nhiều môi trường với các cấu hình khác nhau trong khi duy trì một nguồn chân lý duy nhất cho các infrastructure components.
+
+#### Cấu hình cho Môi trường
+
+Triển khai các file biến cho môi trường (`.tfvars`) để quản lý các cấu hình khác nhau cho development, staging, và production environments. Cách tiếp cận này cho phép:
+- Kích thước và số lượng instance khác nhau cho mỗi môi trường
+- Cấu hình networking specific cho môi trường
+- Tối ưu hóa chi phí bằng cách sử dụng resources nhỏ hơn trong development

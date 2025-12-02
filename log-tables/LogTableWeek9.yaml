@@ -1,0 +1,33 @@
+table: 
+  headers: [Task, Start Date, Completion Date, Reference Material]
+  rows:
+    -
+      - |
+        Migrate frontend to Bun runtime:
+        - Restructure project dependencies
+        - Update build scripts and configuration
+        - Test compatibility with existing APIs
+      - 31-10-2025
+      - 01-11-2025
+      - |
+        https://bun.sh/
+        https://bun.sh/docs
+    -
+      - |
+        Implement UI enhancements:
+        - Add scrolling for decompiled code section
+        - Add scrolling for extracted strings section
+        - Improve report layout and readability
+      - 02-11-2025
+      - 03-11-2025
+      - ""
+    -
+      - |
+        Develop automated report parsing utilities:
+        - Create objectWalk() function for recursive traversal
+        - Implement headerize() for camelCase to Title Case conversion
+        - Organize utilities in util.js module
+      - 03-11-2025
+      - 05-11-2025
+      - "https://github.com/Aohk22/fcj-1-file-analyzer/blob/main/srvc_web/app/util.js"
+   

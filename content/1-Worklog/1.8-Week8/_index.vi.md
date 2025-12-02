@@ -5,55 +5,60 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 8
 
-### Mục tiêu tuần 8:
+- Giải quyết các dependencies trong deployment Terraform
+- Triển khai chiến lược khởi tạo resource có mục tiêu
+- Tiến hành testing hạ tầng toàn diện
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc và Thành tựu
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+|Công việc|Ngày bắt đầu|Ngày hoàn thành|Tài liệu tham khảo|
+| --- | --- | --- | --- |
+|Học và tích hợp AWS Image Builder:<br/>- Cấu hình IAM roles và instance profiles<br/>- Tạo build component scripts<br/>- Định nghĩa image recipes và infrastructure<br/>- Tạo pipelines tự động cho việc tạo AMI<br/>|21-10-2025|23-10-2025|https://docs.aws.amazon.com/imagebuilder/<br/>https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html<br/>|
+|Debug và test cấu trúc Terraform mới:<br/>- Giải quyết module dependencies<br/>- Sửa IAM permissions<br/>- Test Image Builder pipeline<br/>|23-10-2025|23-10-2025||
+|Nghiên cứu quản lý dependency của Terraform.<br/>Phân tích deployment failures và xác định nguyên nhân gốc rễ.<br/>|24-10-2025|24-10-2025|https://developer.hashicorp.com/terraform/cli/commands/apply<br/>https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on<br/>|
+|Triển khai khởi tạo resource có mục tiêu:<br/>- Sử dụng tùy chọn -target cho pre-initialization Image Builder<br/>- Tạo chiến lược deployment theo giai đoạn<br/>- Test thứ tự deployment và thỏa mãn dependency<br/>|25-10-2025|26-10-2025|https://developer.hashicorp.com/terraform/cli/commands/plan#resource-targeting|
 
+### Nhận xét
 
-### Kết quả đạt được tuần 8:
+#### Quản lý Dependency của Terraform
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+Gặp phải và giải quyết vấn đề dependency quan trọng trong workflow deployment Terraform. Hạ tầng yêu cầu các AMIs được xây dựng bởi Image Builder pipeline trước khi launch templates và auto-scaling groups có thể được tạo. Tuy nhiên, lệnh `terraform apply` chuẩn cố gắng tạo tất cả resources đồng thời, gây ra lỗi do thiếu tham chiếu AMI.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+#### Khởi tạo Resource có Mục tiêu
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+Triển khai phương pháp deployment chiến lược sử dụng tùy chọn `-target` của Terraform để kiểm soát thứ tự tạo resource. Kỹ thuật này cho phép kiểm soát chi tiết về resources nào được tạo trước, đảm bảo dependencies được thỏa mãn trước khi các dependent resources được cung cấp.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+**Chiến lược Pre-Initialization Image Builder**:
+Tạo quy trình deployment theo giai đoạn:
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+1. **Giai đoạn 1 - Hạ tầng Image Builder**: Sử dụng `terraform apply -target=module.image_builder` để chỉ khởi tạo các components của Image Builder pipeline bao gồm:
+   - IAM roles và instance profiles
+   - Image Builder components (build scripts)
+   - Image recipes và distributions
+   - Pipeline configuration và schedules
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+2. **Giai đoạn 2 - Tạo AMI**: Trigger Image Builder pipeline thủ công hoặc chờ scheduled execution để tạo các AMIs cần thiết. Bước này đảm bảo rằng các AMI IDs hợp lệ có sẵn trong AWS account trước khi tiếp tục.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+3. **Giai đoạn 3 - Hạ tầng Hoàn chỉnh**: Khi AMIs được xây dựng và có sẵn, thực thi `terraform apply` không có targets để cung cấp hạ tầng còn lại:
+   - VPC và networking components
+   - Security groups và routing tables
+   - Launch templates tham chiếu các AMIs mới tạo
+   - Auto-scaling groups và load balancers
+   - DynamoDB tables và các services khác
 
+Phương pháp theo giai đoạn này giải quyết vấn đề circular dependency khi launch templates cần AMI IDs không tồn tại cho đến khi Image Builder hoàn thành lần chạy đầu tiên.
+
+#### Đánh giá các Phương pháp Thay thế
+
+Khám phá một số giải pháp thay thế trước khi quyết định phương pháp khởi tạo có mục tiêu:
+
+- **Data Source Lookups**: Xem xét sử dụng Terraform data sources để tra cứu các AMIs hiện có, nhưng điều này yêu cầu tạo AMI thủ công cho deployment đầu tiên
+- **Null Resources with Provisioners**: Đánh giá việc sử dụng null resources để trigger Image Builder và chờ hoàn thành, nhưng thấy phương pháp này kém tin cậy hơn
+- **Separate Terraform Workspaces**: Xem xét chia hạ tầng thành hai dự án Terraform riêng biệt, nhưng điều này tăng độ phức tạp và giảm khả năng bảo trì
+- **AMI ID Variables**: Cố gắng sử dụng variables cho AMI IDs, nhưng điều này vẫn yêu cầu can thiệp thủ công cho deployment ban đầu
+
+Tùy chọn `-target` cung cấp sự cân bằng tốt nhất giữa đơn giản, độ tin cậy và tự động hóa.
 
